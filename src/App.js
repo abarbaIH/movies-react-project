@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import MoviesList from "./components/MoviesList";
@@ -6,6 +7,10 @@ import NewMovieForm from "./components/NewMovieForm";
 import Search from "./components/Search";
 
 function App() {
+
+  const [moviesListState, setMoviesListState] = useState([])
+
+
   return (
     <div className="layout">
       <Header />
@@ -14,14 +19,14 @@ function App() {
 
       <section id="content" className="content">
 
-        <MoviesList />
+        <MoviesList moviesListState={moviesListState} setMoviesListState={setMoviesListState} />
 
       </section>
 
       <aside className="lateral">
-        <Search />
+        <Search moviesListState={moviesListState} setMoviesListState={setMoviesListState} />
 
-        <NewMovieForm />
+        <NewMovieForm setMoviesListState={setMoviesListState} />
       </aside>
 
       <Footer />

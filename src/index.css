@@ -218,3 +218,10 @@ input[type="button"] {
     width: 80%;
   }
 }
+
+.not-found {
+  color: red;
+  background-color: #f6b5b5;
+  font-size: 0.75rem;
+  padding: 5px;
+}
